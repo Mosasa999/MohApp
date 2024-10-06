@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Restaurent Details</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+                background-color: #f7f7f7;
+            }
+
+
+            .restaurent-details {
+                background-color: white;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                
+            }
+
+            .restaurent-details h2 {
+                margin-top: 0;
+                font-size: 28px;
+                color: #4CAF50;
+            }
+
+            .restaurent-details ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .restaurent-details ul li {
+                margin: 20px 0;
+                font-size: 18px;
+                display: flex;
+                align-items: center;
+            }
+
+            .restaurent-details ul li img {
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                margin-right: 20px;
+                border-radius: 8px;
+            }
+
+            .back-link:hover {
+                display: block;
+                margin-top: 20px;
+                text-decoration: none;
+                color: #007BB5;
+                font-size: 18px;
+
+            }
+            
+            .back-link:hover {
+                color: #4CAF50;
+
+            }
+            </style>
+    </head>
+    <body>
+
+        <div class="restaurent-details">
+            <h2>Restaurent 1 - Menu</h2>
+            <div class="food-list">
+                <!--Food Item-->
+                <div class="food-item">
+                    <img src="mango-juice-500x500.jpg" alt="Pizza">
+                    <h3>muhogo</h3>
+                    <p>A juice beef burger with lettuce, tomato, and cheese</p>
+                    <p>Price: <span class="price" data_price="120,000">120,000 Tsh</span></p>
+                    <div class="quantity">
+                        <label for="pizza_Qty">Quantity: </label>
+                        <input type="number" id="pizza_Qty" name="pizzaQty" class="qty" min="0" value="0">
+                </div>
+
+                <img src="FB_IMG_1464543219831.jpg" alt="muhogo">
+                    <h3>muhogo</h3>
+                    <p>A juice beef burger with lettuce, tomato, and cheese</p>
+                    <p>Price: <span class="price" data_price="80000">8,000 Tsh</span></p>
+                    <div class="quantity">
+                        <label for="burger_Qty">Quantity: </label>
+                        <input type="number" id="burgerr_Qty" name="pizzaQty" class="qty" min="0" value="0">
+                </div>
+
+                <img src="FB_IMG_1467998424761.jpg" alt="muhogo">
+                    <h3>muhogo</h3>
+                    <p>A juice beef burger with lettuce, tomato, and cheese</p>
+                    <p>Price: <span class="price" data_price="80000">8,000 Tsh</span></p>
+                    <div class="quantity">
+                        <label for="pasta_Qty">Quantity: </label>
+                        <input type="number" id="pasta_Qty" name="pizzaQty" class="qty" min="0" value="0">
+                </div>
+                </div>
+
+                <p>            </p>
+            </div>
+            <div class="total">
+                <b>Total price:</b> <span id="totalPrice">0</span> Tsh
+            </div>
+
+            <p>
+
+
+
+            </p>
+            <button class="proceed-btn" onclick="proceedToBooking"><b>Proceed to Booking</b></button>
+
+            <script>
+                const qtyInputs = document.querySelectorAll('.gty');
+                const totalPriceElement = document.getElementById('totalPrice');
+
+
+                qtyInputs.forEach(input => {
+                    input.addEventListener('input',calculateTotal);
+
+                });
+
+                function calculateTotal() {
+                    let total = 0
+                    const foodItems = document.querySelectorAll('food-item');
+                    foodItems.forEach((item,index) => {
+                        const priceElement = item.querySelector('.price');
+                        const price = parseInt(priceElement.textContent.replace(/ ,/g, '').replace(' Tsh' ''));
+                        const quantity = parseInt(qtyInputs{index}.value) | | 0;
+
+                    }
+                    
+                    function proccedToBooking() {
+                        const total = parseInt(totalPriceElement.textContent.replace(/ ,/g,''));
+                        if (total > 0) {
+                            const pizzaQty = document.getElementById('pizza_qty').value;
+                            const burgerQty = document.getElementById('burger_qty').value;
+                            const pastaQty = document.getElementById(pasta_qty).value;
+
+                            const queryString = '?pizza=${pizzaQty}$burger=${burgerQty}$pasta=${pastaQty}$totalPrice=${total}';
+                            window.location.href='index.html';
+                            <a href="index.html">bookimg</a>
+                        } else {
+                            alert("Please select at least one item to proceed.");
+                        }
+                        
+                    }
+                    
+                }
+            </script>
+            
+    </body>
+</html>
+
+
+            
